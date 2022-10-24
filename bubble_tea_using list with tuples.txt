@@ -1,0 +1,39 @@
+list_tea=[("milk",4.35),("oolong",4.60),("rose",5.85),("mango",5.47)]
+list_addons=[("boba",0.50), ("lychee",0.75), ("jelly",0.65), ("taro",1.00),( "chia",0.35)]
+
+
+
+
+def bubble_tea_calculator(tea_base, add_ons,loyalty_discount):
+  total=0
+     
+  for p,q in list_tea:
+        if tea_base==p:
+          total+=q
+          
+                      
+  for x,y in list_addons:
+        for items in add_ons:
+            if items==x:
+                total+=y
+
+        
+  if loyalty_discount== True:
+        total-= 1
+        
+  # total="{:.2f}".format(total)
+    
+  output="The cost is " + "{:.2f}".format(total)
+    
+  print(output)
+
+
+bubble_tea_calculator("milk",["boba","jelly","taro"], False)
+The cost is 6.50
+
+bubble_tea_calculator("rose",[],False)
+The cost is 5.85
+
+bubble_tea_calculator("oolong",["chia"],True)
+The cost is 3.95
+
